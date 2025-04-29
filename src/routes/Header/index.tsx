@@ -1,23 +1,35 @@
 import { Outlet } from "react-router-dom";
-import data from "../../../data.json";
 import DeleteButton from "../../components/DeleteButton";
 import MenuButton from "../../components/MenuButton";
 import SaveButton from "../../components/SaveButton";
 import useEditorStore from "../../hooks/useEditorStore";
 import Dashboard from "../../components/Dashboard";
+import DeleteModal from "../../components/DeleteModal";
 
 export default function Header() {
   const menuOpen = useEditorStore((state) => state.menuOpen);
+  const showDeleteModal = useEditorStore((state) => state.showDeleteModal);
+  const setShowDeleteModal = useEditorStore(
+    (state) => state.setShowDeleteModal,
+  );
+  const fileCurrent = useEditorStore((state) => state.fileCurrent);
   return (
-    <div className={`${menuOpen ? "fixed" : ""} flex`}>
+    <div
+      onClick={() => showDeleteModal && setShowDeleteModal(false)}
+      className={`${menuOpen ? "fixed" : ""} ${showDeleteModal ? "overflow-y-hidden" : ""} flex`}
+    >
       {menuOpen && (
         <aside className="bg-black-900 desktop:w-1/5 relative h-screen flex-col px-6 py-10 sm:w-1/3">
           <Dashboard />
         </aside>
       )}
-      <section className={`${menuOpen ? "w-2/4 sm:w-full" : "w-full"}`}>
+      <section
+        className={`${menuOpen ? "w-2/4 sm:w-full" : "w-full"} relative`}
+      >
+        {showDeleteModal && <DeleteModal />}
+
         <header
-          className={`bg-black-800 flex h-[4.5em] w-full items-center justify-between px-4`}
+          className={`${showDeleteModal && "brightness-50"} bg-black-800 flex h-[4.5em] w-full items-center justify-between px-4`}
         >
           <div className="flex items-center justify-start gap-6">
             <MenuButton />
@@ -46,7 +58,7 @@ export default function Header() {
                 id="document"
                 className="headingM cursor-pointer text-white outline-0"
                 type="text"
-                defaultValue={data[1].name}
+                defaultValue={fileCurrent.name}
               />
             </div>
           </div>

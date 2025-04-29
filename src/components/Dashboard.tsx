@@ -1,7 +1,8 @@
-import data from "../../data.json";
+import useEditorStore from "../hooks/useEditorStore";
 import ToggleColorMode from "./ToggleColorMode";
 
 export default function Dashboard() {
+  const data = useEditorStore((state) => state.data);
   return (
     <>
       <div className="space-y-8">
