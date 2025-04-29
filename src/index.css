@@ -47,21 +47,25 @@ html,
 
   --breakpoint-desktop: 1141px;
   --breakpoint-tablet: 769px;
+  --breakpoint-sm: 500px;
 }
 
 .headingM {
   font-size: 0.9375rem;
   font-weight: bold;
   font-family: RobotoRegular;
+  font-weight: 500;
 }
 .headingS {
   font-size: 0.875rem;
   line-height: 2px;
   font-family: RobotoRegular;
+  font-weight: 500;
 }
 .bodyS {
   font-size: 0.8125rem;
   font-family: RobotoLight;
+  font-weight: 500;
 }
 
 .title1 {
