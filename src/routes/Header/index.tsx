@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
+import Dashboard from "../../components/Dashboard";
 import DeleteButton from "../../components/DeleteButton";
+import DeleteModal from "../../components/DeleteModal";
 import MenuButton from "../../components/MenuButton";
 import SaveButton from "../../components/SaveButton";
 import useEditorStore from "../../hooks/useEditorStore";
-import Dashboard from "../../components/Dashboard";
-import DeleteModal from "../../components/DeleteModal";
 
 export default function Header() {
   const menuOpen = useEditorStore((state) => state.menuOpen);
@@ -13,6 +13,7 @@ export default function Header() {
     (state) => state.setShowDeleteModal,
   );
   const fileCurrent = useEditorStore((state) => state.fileCurrent);
+
   return (
     <div
       onClick={() => showDeleteModal && setShowDeleteModal(false)}
@@ -58,7 +59,8 @@ export default function Header() {
                 id="document"
                 className="headingM cursor-pointer text-white outline-0"
                 type="text"
-                defaultValue={fileCurrent.name}
+                value={fileCurrent.name}
+                onChange={() => {}}
               />
             </div>
           </div>

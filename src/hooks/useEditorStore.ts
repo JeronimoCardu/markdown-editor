@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import dataJSON from "../../data.json";
+import getLocalStorage from "../utils/getLocalStorage";
+import setLocalStorage from "../utils/setLocalStorage";
 
 export type dataProps = {
   createdAt: string;
@@ -15,21 +16,33 @@ type EditorProps = {
   showDeleteModal: boolean;
   setShowDeleteModal: (show: boolean) => void;
   fileCurrent: dataProps;
-  data: dataProps[];
-  deleteData: (fileToDelete: dataProps) => void;
+  setFileCurrent: (fileIndex: number) => void;
+  deleteFile: () => void;
 };
 
 const useEditorStore = create<EditorProps>((set) => ({
-  data: dataJSON,
   menuOpen: false,
   setMenuOpen: (menu: boolean) => set({ menuOpen: menu }),
   theme: "light",
   setTheme: (theme: string) => set({ theme: theme }),
   showDeleteModal: false,
   setShowDeleteModal: (show: boolean) => set({ showDeleteModal: show }),
-  fileCurrent: dataJSON[dataJSON.length - 1],
-  deleteData: (fileToDelete: dataProps) =>
-    set((state) => ({ data: state.data.filter((d) => d != fileToDelete) })),
+  fileCurrent: getLocalStorage()[getLocalStorage().length - 1],
+  setFileCurrent: (fileIndex: number) =>
+    set({ fileCurrent: getLocalStorage()[fileIndex] }),
+  deleteFile: () =>
+    set((state) => {
+      const deleted = getLocalStorage().filter(
+        (file: dataProps) => file.name != state.fileCurrent.name,
+      );
+      setLocalStorage(deleted);
+
+      return getLocalStorage().length > 0
+        ? {
+            fileCurrent: deleted[deleted.length - 1],
+          }
+        : { fileCurrent: { name: "", content: "", createdAt: "" } };
+    }),
 }));
 
 export default useEditorStore;
