@@ -32,6 +32,9 @@ const useEditorStore = create<EditorProps>((set) => ({
     set({ fileCurrent: getLocalStorage()[fileIndex] }),
   deleteFile: () =>
     set((state) => {
+      if (getLocalStorage().length <= 1) {
+        return {}; // no cambia nada
+      }
       const deleted = getLocalStorage().filter(
         (file: dataProps) => file.name != state.fileCurrent.name,
       );
