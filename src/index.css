@@ -96,3 +96,8 @@ html,
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
+
+.scrollbarDashboard {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-orange) transparent; /* color naranja y fondo transparente */
+}

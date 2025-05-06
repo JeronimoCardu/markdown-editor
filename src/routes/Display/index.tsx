@@ -1,120 +1,57 @@
 import useEditorStore from "../../hooks/useEditorStore";
+import Markdown from "react-markdown";
 
 export default function Display() {
   const showDeleteModal = useEditorStore((state) => state.showDeleteModal);
+  const fileCurrent = useEditorStore((state) => state.fileCurrent);
+  const updateFile = useEditorStore((state) => state.updateFile);
+  const viewPreview = useEditorStore((state) => state.viewPreview);
+  const setViewPreview = useEditorStore((state) => state.setViewPreview);
   return (
-    <div className={`${showDeleteModal && "backdrop-brightness-50"}`}>
-      <p className="z-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quidem
-        id repudiandae porro veritatis! Hic, assumenda illo? Quis dolorem harum
-        facilis deleniti rerum id veniam! Repellendus autem optio recusandae
-        laboriosam, corporis aliquam? Pariatur necessitatibus similique aliquid
-        vitae officiis iure explicabo eveniet itaque repellendus non est autem,
-        libero perferendis perspiciatis fugit suscipit sequi esse possimus
-        porro. Hic ut repellendus libero. Assumenda delectus quos, modi
-        exercitationem aspernatur accusamus corrupti perspiciatis quam officiis
-        similique! Iure voluptatem expedita nulla consectetur beatae amet, vel
-        saepe quas voluptates inventore ipsa hic recusandae deserunt autem
-        repellendus esse nemo modi itaque? In, praesentium. Itaque asperiores
-        odit ullam dolorum provident ipsum quidem, non eligendi voluptate, eaque
-        labore magni tempora placeat nisi in sint fugiat repellat exercitationem
-        culpa maxime, similique quaerat? Sint libero, iste nesciunt fugiat
-        veritatis eaque nulla amet unde. Saepe est possimus iste eos quo, dicta
-        maiores voluptate magnam velit voluptatibus. Quisquam est libero
-        temporibus voluptas facere ipsa velit. Recusandae ab vero non, error
-        ducimus eius. Optio, ea beatae. Id cum perferendis non ipsa ab! Ut,
-        accusantium, voluptatibus enim necessitatibus error sunt voluptatem,
-        soluta asperiores non accusamus obcaecati quia vel perspiciatis. Eos,
-        quasi maxime. Assumenda vel quo iure saepe maiores tempore, earum fugiat
-        esse inventore unde rerum aspernatur perferendis repellat autem?
-        Voluptates veniam corporis labore facilis iste blanditiis praesentium.
-        Consequatur eligendi fugiat mollitia eum recusandae incidunt pariatur,
-        iusto nisi dicta repellendus totam labore eveniet, corrupti voluptatem
-        obcaecati, esse vel id excepturi! Beatae, delectus. Consequatur eveniet
-        illum animi. Perspiciatis, non possimus! Commodi saepe dolores ducimus,
-        nihil laboriosam quos rem eum fugiat? Voluptas ratione natus sed officia
-        animi ducimus dolor minus consequatur quibusdam omnis ad accusantium
-        facere iure, nulla, adipisci maxime incidunt eius laborum nam! Assumenda
-        autem deleniti tenetur accusantium sed molestiae praesentium totam
-        possimus reprehenderit, odio minus magnam quibusdam saepe quaerat nulla
-        eos, earum vel sapiente? Magnam, veniam ipsum aliquam non cumque illo
-        nam dicta adipisci illum dolorem et, alias accusantium quisquam, enim
-        nihil beatae ducimus repudiandae voluptatum aspernatur numquam. Neque
-        ipsa qui cumque debitis, culpa accusamus quas sapiente id vel at
-        reiciendis nisi expedita et. Alias consectetur quas quis iusto accusamus
-        accusantium aliquam tenetur inventore laboriosam velit delectus dolorum
-        impedit dicta, voluptatibus possimus officia doloremque debitis nemo
-        nobis minus rerum. Porro reprehenderit tempore corporis. Dolorem, vel.
-        Quia corporis, ad cum tempore aut fugit cupiditate doloremque illo at
-        eum suscipit aliquam quos ratione aperiam nesciunt, numquam deleniti
-        consectetur. Reiciendis atque iure, dolorum dolor quaerat quidem
-        incidunt reprehenderit. Quo aut, debitis quos soluta porro eligendi eos
-        sed, nostrum illo dicta, nesciunt numquam qui culpa atque. Tempora
-        nostrum eaque voluptate reprehenderit minus dolores deserunt
-        necessitatibus, reiciendis doloremque nam illum fugit animi
-        exercitationem quidem ut ducimus est ad voluptatem! Quasi officiis quos
-        vel minima minus soluta in nemo dignissimos, earum animi tempora numquam
-        porro culpa voluptate nobis aliquam nostrum nihil sit possimus fuga
-        ipsa! Mollitia quasi unde non. Nemo reiciendis quae, veritatis voluptas
-        in dolorum illo quas? Nulla in nobis eaque, voluptates earum sunt
-        voluptatem eius delectus corrupti, expedita inventore veritatis sed ea
-        quis quos dolorum illo eligendi natus recusandae iusto cumque deserunt
-        iure. Ea recusandae magnam iusto consequatur, deleniti cum corporis
-        vitae quia, ab accusamus quidem? Nulla, esse tempore ea corrupti beatae
-        debitis neque consectetur consequuntur minima vitae suscipit laborum
-        obcaecati, velit fuga, dolores inventore itaque ullam. Obcaecati
-        repellat quas ab tempora officiis hic voluptates vitae unde aperiam ad
-        quasi architecto totam veritatis laboriosam similique sit eaque debitis
-        omnis inventore possimus quidem, qui velit esse sequi. Consectetur
-        assumenda impedit inventore accusantium, culpa ea et, deserunt
-        temporibus magni quis at hic corrupti! Suscipit aliquam officia quos
-        natus quod, illum enim delectus magnam quaerat ad ab mollitia alias
-        eius, vel exercitationem earum ratione deleniti. Aspernatur, provident
-        veritatis sit quod quis quos inventore temporibus dolore ratione
-        tempora, distinctio quam repellat libero odio. Distinctio laudantium
-        porro mollitia necessitatibus similique reiciendis fugit saepe, maxime
-        modi adipisci eius ipsum consequuntur. Laborum quaerat voluptate maxime,
-        dicta inventore commodi! Aperiam ut numquam, similique voluptas autem
-        nemo cumque nostrum error velit iste quam delectus officia quidem non
-        illo odit perferendis, aspernatur accusantium cupiditate quae.
-        Architecto adipisci consequatur et neque praesentium. Quos dolorum ullam
-        optio molestias. Doloribus quod, necessitatibus commodi impedit dolores
-        animi culpa architecto voluptatem illo, rem fugit distinctio sequi
-        tenetur harum quae voluptatibus tempore temporibus esse, quaerat minima
-        consequatur rerum nemo. Rem corporis fuga animi doloremque nam incidunt
-        minus debitis, eveniet harum neque optio, et iure. Commodi quidem
-        architecto minus est velit. Blanditiis aliquid corporis voluptas debitis
-        dolorem quod omnis velit veritatis non repellat fugiat beatae rerum
-        quas, dolorum quis, inventore ea doloremque odio molestiae
-        exercitationem ratione. Quam aperiam commodi neque a earum provident
-        dolores est doloremque debitis sit. Laudantium rem, minima voluptas
-        culpa distinctio ipsam. Repellat labore voluptatem aspernatur placeat
-        velit error eveniet sequi dolorem iure distinctio est nisi deleniti
-        rerum ex facilis reprehenderit beatae, cupiditate facere suscipit!
-        Tempora, facere rem repellat, natus repudiandae placeat alias voluptatem
-        ab officiis dolor rerum inventore dicta, asperiores atque odio sapiente
-        quia ex expedita autem ipsum aspernatur sunt quidem sequi? Pariatur
-        excepturi quia, vitae magni expedita officiis aspernatur sapiente quasi
-        ad eaque similique, deserunt eius veniam amet sequi autem sint sunt,
-        rerum dignissimos incidunt soluta alias. Dicta porro molestias non eos.
-        Natus, cumque magnam inventore accusantium vero recusandae quo sunt
-        dolorum nulla minima ducimus tenetur unde excepturi tempore quam hic
-        repudiandae pariatur laudantium dolores autem qui a, dignissimos itaque
-        illo? Assumenda iure ea inventore! Eum necessitatibus hic nemo at
-        commodi adipisci! Blanditiis optio pariatur minima nisi culpa nostrum
-        iure, consequatur praesentium numquam ab vero sequi aperiam illo in
-        neque dolorem magni quidem modi amet quasi? Iste, temporibus dolor.
-        Ducimus beatae voluptatibus quos eius soluta eligendi ipsam illo ratione
-        expedita officia numquam dolorem velit recusandae omnis sapiente non
-        minus cum, ex doloribus? Ex similique tempore ipsum! Quaerat, iure.
-        Exercitationem tempora eum blanditiis consequuntur aspernatur?
-        Voluptatum numquam quos corporis? Laudantium, delectus illum
-        exercitationem obcaecati alias dignissimos, incidunt odit modi ut
-        provident quam voluptatem quasi, dolorem debitis. Quisquam nesciunt
-        itaque in quis eos optio necessitatibus tenetur laboriosam veniam,
-        fugit, ea omnis facilis? Ipsum ex molestias iusto similique ut ab velit,
-        quisquam odio blanditiis vero reprehenderit?
-      </p>
+    <div
+      className={`${showDeleteModal && "backdrop-brightness-50"} h-screen w-full`}
+    >
+      <section
+        onClick={() => setViewPreview(!viewPreview)}
+        className="absolute flex h-[2.5rem] w-full cursor-pointer items-center justify-between bg-gray-200 px-4"
+      >
+        <p className="headingS text-gray-500">
+          {viewPreview ? "PREVIEW" : "MARKDOWN"}
+        </p>
+        {viewPreview ? (
+          <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1.38.027a.795.795 0 0 1 .769.206L14.815 12.9a.792.792 0 0 1 0 1.124.792.792 0 0 1-1.124 0L9.234 9.567a2.77 2.77 0 0 1-3.753-3.753L1.024 1.357a.795.795 0 0 1 .357-1.33Zm.998 3.832 1.156 1.116a10.846 10.846 0 0 0-1.773 2.153c.696 1.117 2.929 4.038 6.333 3.959a6.127 6.127 0 0 0 1.346-.198l1.25 1.25a7.505 7.505 0 0 1-2.556.53h-.198c-4.663 0-7.331-4.282-7.83-5.145a.792.792 0 0 1 0-.792A12.58 12.58 0 0 1 2.378 3.86Zm5.328-2.272c4.726-.143 7.52 4.267 8.028 5.145.15.24.163.542.031.792a12.58 12.58 0 0 1-2.304 2.874l-1.195-1.116a10.846 10.846 0 0 0 1.813-2.154c-.705-1.116-2.937-4.045-6.333-3.958a6.127 6.127 0 0 0-1.346.198L5.149 2.117a7.505 7.505 0 0 1 2.557-.53Zm-.974 5.486v.055c0 .656.532 1.188 1.188 1.188l.047-.008-1.235-1.235Z"
+              fill="#000000"
+            />
+          </svg>
+        ) : (
+          <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7.784.003c4.782-.144 7.597 4.31 8.109 5.198a.8.8 0 0 1 0 .8c-.688 1.2-3.255 5.086-7.677 5.198h-.2c-4.71 0-7.405-4.326-7.909-5.198a.8.8 0 0 1 0-.8C.803 4.001 3.362.115 7.784.003Zm.38 1.6h-.3c-3.199.08-5.286 2.71-6.086 3.998C2.482 6.73 4.73 9.68 8.176 9.6c3.199-.08 5.262-2.711 6.086-3.999-.712-1.127-2.967-4.086-6.398-3.998ZM8 2.803A2.799 2.799 0 1 1 8 8.4a2.799 2.799 0 0 1 0-5.598Zm0 1.599A1.2 1.2 0 1 0 8 6.8a1.2 1.2 0 0 0 0-2.4Z"
+              fill="#000000"
+            />
+          </svg>
+        )}
+      </section>
+      <div className={`${viewPreview && "hidden"} h-screen w-full pt-12`}>
+        <textarea
+          className="h-full w-full outline-0"
+          value={fileCurrent.content}
+          onChange={(e) => {
+            updateFile({
+              createdAt: fileCurrent.createdAt,
+              name: fileCurrent.name,
+              content: e.target.value,
+            });
+          }}
+        >
+          {fileCurrent.content}
+        </textarea>
+      </div>
+      <div className={`${!viewPreview && "hidden"} h-screen w-full pt-12`}>
+        <Markdown>{fileCurrent.content}</Markdown>
+      </div>
     </div>
   );
 }

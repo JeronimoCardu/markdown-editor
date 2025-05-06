@@ -13,6 +13,7 @@ export default function Header() {
     (state) => state.setShowDeleteModal,
   );
   const fileCurrent = useEditorStore((state) => state.fileCurrent);
+  const updateFile = useEditorStore((state) => state.updateFile);
 
   return (
     <div
@@ -60,7 +61,13 @@ export default function Header() {
                 className="headingM cursor-pointer text-white outline-0"
                 type="text"
                 value={fileCurrent.name}
-                onChange={() => {}}
+                onChange={(e) => {
+                  updateFile({
+                    createdAt: fileCurrent.createdAt,
+                    name: e.target.value,
+                    content: fileCurrent.content,
+                  });
+                }}
               />
             </div>
           </div>

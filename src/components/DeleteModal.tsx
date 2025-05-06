@@ -11,8 +11,6 @@ export default function DeleteModal() {
     <div
       onClick={(e) => {
         e.stopPropagation();
-        setShowDeleteModal(false);
-        deleteFile();
       }}
       className="deleteModal fixed top-60 left-1/2 z-100 w-9/10 -translate-x-1/2 space-y-4 rounded-[4px] bg-white p-6"
     >
@@ -24,7 +22,10 @@ export default function DeleteModal() {
         This action cannot be reversed.
       </p>
       <button
-        onClick={() => {}}
+        onClick={() => {
+          setShowDeleteModal(false);
+          deleteFile();
+        }}
         className="bg-orange hover:bg-orangeHover w-full cursor-pointer rounded-[4px] p-2 text-white outline-0"
       >
         Confirm & Delete
