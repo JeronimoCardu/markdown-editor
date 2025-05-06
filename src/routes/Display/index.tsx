@@ -1,5 +1,5 @@
 import useEditorStore from "../../hooks/useEditorStore";
-import Markdown from "react-markdown";
+import MarkdownRerender from "../../utils/MarkdownRerender";
 
 export default function Display() {
   const showDeleteModal = useEditorStore((state) => state.showDeleteModal);
@@ -36,7 +36,7 @@ export default function Display() {
       </section>
       <div className={`${viewPreview && "hidden"} h-screen w-full pt-12`}>
         <textarea
-          className="h-full w-full outline-0"
+          className="h-full w-full p-3 outline-0"
           value={fileCurrent.content}
           onChange={(e) => {
             updateFile({
@@ -49,8 +49,8 @@ export default function Display() {
           {fileCurrent.content}
         </textarea>
       </div>
-      <div className={`${!viewPreview && "hidden"} h-screen w-full pt-12`}>
-        <Markdown>{fileCurrent.content}</Markdown>
+      <div className={`${!viewPreview && "hidden"} h-screen w-full px-4 py-12`}>
+        <MarkdownRerender children={fileCurrent.content} />
       </div>
     </div>
   );
