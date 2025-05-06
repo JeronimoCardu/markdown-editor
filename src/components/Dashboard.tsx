@@ -9,7 +9,7 @@ export default function Dashboard() {
   const setMenuOpen = useEditorStore((state) => state.setMenuOpen);
   return (
     <>
-      <div className="h-full space-y-8">
+      <div className={`h-full space-y-8`}>
         <img className="desktop:hidden" src="/images/logo.svg" alt="" />
         <h2 className="headingS text-gray-500">MY DOCUMENTS</h2>
         <button

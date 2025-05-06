@@ -12,10 +12,10 @@ export default function DeleteModal() {
       onClick={(e) => {
         e.stopPropagation();
       }}
-      className="deleteModal fixed top-60 left-1/2 z-100 w-9/10 -translate-x-1/2 space-y-4 rounded-[4px] bg-white p-6"
+      className="deleteModal dark:bg-black-900 fixed top-60 left-1/2 z-100 w-9/10 -translate-x-1/2 space-y-4 rounded-[4px] bg-white p-6"
     >
-      <h2 className="title4">Delete this document?</h2>
-      <p className="paragraph font-[RobotoSlabRegular]">
+      <h2 className="title4 dark:text-gray-100">Delete this document?</h2>
+      <p className="paragraph font-[RobotoSlabRegular] dark:text-gray-400">
         Are you sure you want to delete the '{fileCurrent.name}' document and
         its contents?
         <br />

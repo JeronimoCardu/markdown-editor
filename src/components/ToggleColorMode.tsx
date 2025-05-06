@@ -3,6 +3,9 @@ import useEditorStore from "../hooks/useEditorStore";
 export default function ToggleColorMode() {
   const theme = useEditorStore((state) => state.theme);
   const setTheme = useEditorStore((state) => state.setTheme);
+  const body = document.querySelector("body");
+  body?.setAttribute("data-theme", theme);
+
   return (
     <div
       onClick={() => (theme == "light" ? setTheme("dark") : setTheme("light"))}

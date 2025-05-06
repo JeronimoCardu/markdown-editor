@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 body,
 html,
 #root {
@@ -45,7 +47,7 @@ html,
   --color-orange: #e46643;
   --color-orangeHover: #f39765;
 
-  --breakpoint-desktop: 1141px;
+  --breakpoint-desktop: 1441px;
   --breakpoint-tablet: 769px;
   --breakpoint-sm: 500px;
 }
