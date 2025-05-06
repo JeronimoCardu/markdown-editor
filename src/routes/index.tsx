@@ -2,8 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import NavBar from "./Header";
 import Display from "./Display";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
